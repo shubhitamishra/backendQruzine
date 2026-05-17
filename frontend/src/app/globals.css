@@ -1,0 +1,487 @@
+/* Import trendy Google Fonts - MUST be first */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Enhanced color definitions with stronger contrast */
+@theme {
+  /* Deep burgundy palette matching reference */
+  --color-burgundy-deep: #4a1a1a;
+  --color-burgundy-rich: #6b2737;
+  --color-burgundy-main: #8b3a3a;
+
+  /* Dark forest green palette */
+  --color-forest-dark: #1a3d2e;
+  --color-forest-main: #2d5a47;
+  --color-forest-light: #3d6b57;
+
+  /* Bronze/gold accents */
+  --color-bronze-light: #d4af37;
+  --color-bronze-main: #b8860b;
+  --color-bronze-dark: #9a7209;
+
+  /* High contrast text colors */
+  --color-text-light: #f5f5dc;
+  --color-text-cream: #faf0e6;
+  --color-text-bronze: #d4af37;
+
+  /* Font family variables */
+  --font-primary: "Inter", sans-serif;
+  --font-heading: "Playfair Display", serif;
+  --font-ui: "Poppins", sans-serif;
+  --font-accent: "Montserrat", sans-serif;
+  --font-script: "Dancing Script", cursive;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-elegant: "Crimson Text", serif;
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-primary);
+    font-feature-settings: "liga" 1, "kern" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+  }
+
+  /* Modern heading hierarchy */
+  h1, .heading-1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  h2, .heading-2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  h3, .heading-3 {
+    font-family: var(--font-ui);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  h4, .heading-4 {
+    font-family: var(--font-ui);
+    font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  h5, .heading-5 {
+    font-family: var(--font-accent);
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  h6, .heading-6 {
+    font-family: var(--font-accent);
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  /* Enhanced text variations */
+  .text-body {
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .text-large {
+    font-family: var(--font-primary);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  .text-small {
+    font-family: var(--font-ui);
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .text-xs {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+}
+
+/* Restaurant-specific background */
+.restaurant-main-bg {
+  background: #4a1a1a;
+  background-image: radial-gradient(circle at 25% 25%, rgba(139, 58, 58, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(107, 39, 55, 0.2) 0%, transparent 50%),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(212, 175, 55, 0.05) 2px,
+      rgba(212, 175, 55, 0.05) 4px
+    );
+  position: relative;
+  color: #f5f5dc;
+}
+
+.restaurant-main-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.content-panel {
+  background: rgba(26, 61, 46, 0.95);
+  backdrop-filter: blur(10px);
+  border: 2px solid #d4af37;
+  border-radius: 12px;
+  color: #f5f5dc;
+}
+
+/* Enhanced bronze accent classes with stronger specificity */
+.bronze-accent {
+  color: #d4af37 !important;
+}
+
+.bronze-border {
+  border-color: #d4af37 !important;
+}
+
+.bronze-bg {
+  background-color: #d4af37 !important;
+  color: #1a3d2e !important;
+}
+
+/* Restaurant-specific typography with modern fonts */
+.luxury-title {
+  font-family: var(--font-heading);
+  color: #f5f5dc !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.restaurant-name {
+  font-family: var(--font-script);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  color: #d4af37 !important;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.menu-category-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 600;
+  color: #d4af37 !important;
+  border-bottom: 3px solid #d4af37;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.dish-name {
+  font-family: var(--font-ui);
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  font-weight: 600;
+  color: #f5f5dc !important;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.dish-description {
+  font-family: var(--font-elegant);
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  color: rgba(245, 245, 220, 0.85) !important;
+  line-height: 1.5;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.price-display {
+  font-family: var(--font-mono);
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  font-weight: 700;
+  color: #d4af37 !important;
+  letter-spacing: 0.05em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.elegant-text {
+  font-family: var(--font-elegant);
+  color: #f5f5dc !important;
+}
+
+.elegant-text-muted {
+  font-family: var(--font-elegant);
+  color: rgba(245, 245, 220, 0.8) !important;
+}
+
+.modern-ui-text {
+  font-family: var(--font-ui);
+  color: #f5f5dc !important;
+}
+
+.accent-text {
+  font-family: var(--font-accent);
+  font-weight: 500;
+  color: #f5f5dc !important;
+}
+
+.text-forest-dark {
+  color: #1a3d2e !important;
+}
+
+/* Modern button styles */
+.btn-primary {
+  font-family: var(--font-accent);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.025em;
+  background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+  color: #1a3d2e !important;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #b8860b 0%, #9a7209 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.btn-secondary {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 0.95rem;
+  background: rgba(45, 90, 71, 0.8);
+  color: #f5f5dc !important;
+  border: 2px solid #d4af37;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(45, 90, 71, 1);
+  border-color: #b8860b;
+  transform: translateY(-1px);
+}
+
+/* Enhanced decorative elements */
+.qr-decorative-border {
+  border: 3px solid #d4af37;
+  border-radius: 12px;
+  position: relative;
+  padding: 20px;
+}
+
+.qr-decorative-border::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border: 2px solid #b8860b;
+  border-radius: 16px;
+  z-index: -1;
+}
+
+.menu-item-card {
+  background: rgba(45, 90, 71, 0.8);
+  border: 1px solid #d4af37;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  color: #f5f5dc;
+  backdrop-filter: blur(5px);
+}
+
+.menu-item-card:hover {
+  background: rgba(45, 90, 71, 0.95);
+  border-color: #b8860b;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Additional utility classes for modern design */
+.gradient-text {
+  background: linear-gradient(135deg, #d4af37 0%, #f5f5dc 50%, #d4af37 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.glass-effect {
+  background: rgba(26, 61, 46, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.text-shadow-luxury {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+/* Responsive typography scaling */
+@media (max-width: 640px) {
+  .restaurant-name {
+    font-size: 2.5rem;
+  }
+  
+  .menu-category-title {
+    font-size: 1.5rem;
+  }
+  
+  .dish-name {
+    font-size: 1.125rem;
+  }
+}
